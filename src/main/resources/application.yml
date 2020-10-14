@@ -1,0 +1,14 @@
+server:
+  port: 8083 #为了以后访问项目不用写端口号
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8  #解决中文乱码的问题
+    username: root
+    password: 123456
+  jpa: 
+    hibernate:
+      ddl-auto: update  #每次运行的时候，delete库，重新创建
+    show-sql: true      #dao操作时，显示sql语句
+  messages:
+    basename: i18N.message #修改默认路径
