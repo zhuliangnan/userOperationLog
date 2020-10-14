@@ -25,7 +25,8 @@ public class ChannelFilter implements Filter {
         //取Body数据
         RequestWrapper requestWrapper = new RequestWrapper(request);
         String body = requestWrapper.getBody();
-        //chain.doFiler方法中传递新的request对象
+
+        //chain.doFiler方法中传递新的request对象 不然request流只能读取一次
         filterChain.doFilter(requestWrapper != null ? requestWrapper : request, servletResponse);
 
         HttpServletResponse response = (HttpServletResponse) servletResponse;
